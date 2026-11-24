@@ -142,32 +142,7 @@ section{padding:72px 0}
 .hab .foto{aspect-ratio:4/3;background:linear-gradient(135deg,var(--beige),var(--dorado-claro));display:flex;align-items:center;justify-content:center;font-size:3rem}
 .hab .foto img{width:100%;height:100%;object-fit:cover}
 .hab .info{padding:18px}
-.hab .info h3{color:var(--marron);margin-bottom:.2em}
-.hab .camas{margin:.2em 0;color:var(--gris);font-size:.93rem}
-.hab .pisos{margin:.2em 0 .6em;color:var(--gris);font-size:.85rem}
-.hab .nums{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.chip{display:inline-block;padding:3px 11px;border-radius:999px;background:var(--crema);border:1px solid var(--beige);color:var(--marron);font-size:.82rem;font-weight:600}
-.hab .precio{color:var(--dorado);font-weight:700;font-size:1.1rem;border-top:1px solid var(--beige);padding-top:10px}
-
-/* Resumen (15 habitaciones · 20 camas · ...) */
-.resumen{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;max-width:760px;margin:0 auto 38px}
-.resumen div{background:var(--blanco);border:1px solid var(--beige);border-radius:var(--radio);padding:14px 10px;text-align:center}
-.resumen strong{display:block;font-family:Georgia,serif;font-size:2rem;color:var(--dorado);line-height:1}
-.resumen span{font-size:.85rem;color:var(--gris)}
-
-/* TV y streaming */
-#entretenimiento{background:linear-gradient(135deg,var(--marron),#1B2D63);color:var(--blanco)}
-#entretenimiento .titulo h2{color:var(--dorado-claro)}
-#entretenimiento .titulo h2::after{background:var(--dorado-claro)}
-#entretenimiento .titulo p{color:#e6d9cc}
-.plataformas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:34px}
-.plat{padding:10px 22px;border-radius:999px;border:1.5px solid var(--dorado-claro);background:rgba(255,255,255,.08);font-weight:700;letter-spacing:.5px}
-.grid-ext{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.ext{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--radio);padding:22px 18px;text-align:center}
-.ext .icono{font-size:2.2rem;margin-bottom:6px}
-.ext h3{font-size:1.05rem;color:var(--dorado-claro);margin-bottom:4px}
-.ext p{margin:0;font-size:.9rem;color:#e6d9cc}
-.mas{text-align:center;margin:28px 0 0;font-size:1.1rem;color:var(--dorado-claro);font-family:Georgia,serif}
+.hab .precio{color:var(--dorado);font-weight:700;font-size:1.2rem}
 
 /* Galería */
 #galeria{background:var(--beige)}
@@ -244,8 +219,7 @@ footer a{color:var(--dorado-claro)}
       <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#entretenimiento">TV y streaming</a></li>
-        <li id="nav-hab"><a href="#habitaciones">Habitaciones</a></li>
+        <li id="nav-hab" hidden><a href="#habitaciones">Habitaciones</a></li>
         <li><a href="#galeria">Galería</a></li>
         <li><a href="#ubicacion">Ubicación</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -280,7 +254,7 @@ footer a{color:var(--dorado-claro)}
     <div class="grid-serv" id="lista-servicios">
       <div class="serv"><div class="icono">📶</div><h3>WiFi</h3><p>Internet para trabajar o descansar.</p></div>
       <div class="serv"><div class="icono">🚙</div><h3>Cochera</h3><p>Estacionamiento para tu vehículo.</p></div>
-      <div class="serv"><div class="icono">📺</div><h3>TV 43" QLED</h3><p>Con Netflix, Prime Video, ESPN y más.</p></div>
+      <div class="serv"><div class="icono">📺</div><h3>TV 43" QLED</h3><p>Pantalla grande en cada habitación.</p></div>
       <div class="serv"><div class="icono">🥤</div><h3>Snacks y gaseosas</h3><p>Disponibles durante tu estadía.</p></div>
       <div class="serv"><div class="icono">🔏</div><h3>Privacidad</h3><p>Discreción y tranquilidad.</p></div>
       <div class="serv"><div class="icono">📃</div><h3>Comprobantes electrónicos</h3><p>Boleta y factura electrónica.</p></div>
@@ -289,52 +263,14 @@ footer a{color:var(--dorado-claro)}
   </div>
 </section>
 
-<!-- ====================== TV Y STREAMING ====================== -->
-<!-- Contenido estático de respaldo; se edita desde CONFIG.entretenimiento -->
-<section id="entretenimiento">
+<!-- ====================== HABITACIONES (opcional) ====================== -->
+<section id="habitaciones" hidden>
   <div class="contenedor">
     <div class="titulo aparecer">
-      <h2>Entretenimiento a tu medida</h2>
-      <p>Disfruta de tu TV QLED 43" con las mejores plataformas y canales.</p>
+      <h2>Habitaciones</h2>
+      <p>Elige la que mejor se adapte a ti.</p>
     </div>
-    <div class="plataformas" id="lista-plataformas">
-      <span class="plat">Netflix</span>
-      <span class="plat">Amazon Prime Video</span>
-      <span class="plat">ESPN</span>
-      <span class="plat">Canales nacionales</span>
-      <span class="plat">Canales internacionales</span>
-    </div>
-    <div class="grid-ext" id="lista-extras">
-      <div class="ext"><div class="icono">🎬</div><h3>Películas y estrenos</h3><p>Lo último del cine para tu noche.</p></div>
-      <div class="ext"><div class="icono">🍿</div><h3>Series</h3><p>Maratones cómodos y sin interrupciones.</p></div>
-      <div class="ext"><div class="icono">⚽</div><h3>Deportes con ESPN</h3><p>Sigue tus partidos y eventos favoritos.</p></div>
-      <div class="ext"><div class="icono">🌎</div><h3>Canales del mundo</h3><p>Programación nacional e internacional.</p></div>
-    </div>
-    <p class="mas">…¡y mucho más!</p>
-  </div>
-</section>
-
-<!-- ====================== HABITACIONES ====================== -->
-<!-- Contenido estático de respaldo; se edita desde CONFIG.habitaciones -->
-<section id="habitaciones">
-  <div class="contenedor">
-    <div class="titulo aparecer">
-      <h2>Nuestras habitaciones</h2>
-      <p>15 habitaciones distribuidas en los pisos 2, 3 y 4. Elige la que mejor se adapte a ti.</p>
-    </div>
-    <div class="resumen" id="resumen-hab">
-      <div><strong>15</strong><span>Habitaciones</span></div>
-      <div><strong>20</strong><span>Camas</span></div>
-      <div><strong>3</strong><span>Pisos</span></div>
-      <div><strong>5</strong><span>Tipos de habitación</span></div>
-    </div>
-    <div class="grid-hab" id="lista-habitaciones">
-      <article class="hab"><div class="foto">🛏️</div><div class="info"><h3>Matrimonial</h3><p class="camas">🛏️ 1 cama · colchón de 2 plazas</p><p class="pisos">Pisos 2, 3 y 4</p><div class="nums"><span class="chip">201</span><span class="chip">203</span><span class="chip">205</span><span class="chip">301</span><span class="chip">303</span><span class="chip">305</span><span class="chip">401</span><span class="chip">403</span></div><div class="precio">Consulta tarifas</div></div></article>
-      <article class="hab"><div class="foto">🛏️</div><div class="info"><h3>Simple</h3><p class="camas">🛏️ 1 cama · colchón de plaza y media</p><p class="pisos">Pisos 2, 3 y 4</p><div class="nums"><span class="chip">202</span><span class="chip">302</span><span class="chip">402</span></div><div class="precio">Consulta tarifas</div></div></article>
-      <article class="hab"><div class="foto">🛏️</div><div class="info"><h3>Doble</h3><p class="camas">🛏️ 2 camas · 2 colchones de plaza y media</p><p class="pisos">Pisos 2 y 3</p><div class="nums"><span class="chip">204</span><span class="chip">304</span></div><div class="precio">Consulta tarifas</div></div></article>
-      <article class="hab"><div class="foto">🛏️</div><div class="info"><h3>Triple</h3><p class="camas">🛏️ 3 camas · 3 colchones de plaza y media</p><p class="pisos">Piso 4</p><div class="nums"><span class="chip">404</span></div><div class="precio">Consulta tarifas</div></div></article>
-      <article class="hab"><div class="foto">🛏️</div><div class="info"><h3>Doble plus</h3><p class="camas">🛏️ 2 camas · 1 colchón de 2 plazas + 1 de plaza y media</p><p class="pisos">Piso 4</p><div class="nums"><span class="chip">405</span></div><div class="precio">Consulta tarifas</div></div></article>
-    </div>
+    <div class="grid-hab" id="lista-habitaciones"></div>
   </div>
 </section>
 
@@ -446,60 +382,20 @@ var CONFIG = {
   servicios: [
     { icono: "📶", titulo: "WiFi",                      texto: "Internet para trabajar o descansar." },
     { icono: "🚙", titulo: "Cochera",                   texto: "Estacionamiento para tu vehículo." },
-    { icono: "📺", titulo: "TV 43\" QLED",              texto: "Con Netflix, Prime Video, ESPN y más." },
+    { icono: "📺", titulo: "TV 43\" QLED",              texto: "Pantalla grande en cada habitación." },
     { icono: "🥤", titulo: "Snacks y gaseosas",         texto: "Disponibles durante tu estadía." },
     { icono: "🔏", titulo: "Privacidad",                texto: "Discreción y tranquilidad." },
     { icono: "📃", titulo: "Comprobantes electrónicos", texto: "Boleta y factura electrónica." },
     { icono: "💳", titulo: "Pago con tarjeta",          texto: "Aceptamos tarjetas de crédito y débito." }
   ],
 
-  /* ---------- TV Y STREAMING ----------
-     Para agregar una plataforma o canal, añade una línea nueva. */
-  entretenimiento: {
-    plataformas: ["Netflix", "Amazon Prime Video", "ESPN", "Canales nacionales", "Canales internacionales"],
-    extras: [
-      { icono: "🎬", titulo: "Películas y estrenos", texto: "Lo último del cine para tu noche." },
-      { icono: "🍿", titulo: "Series",               texto: "Maratones cómodos y sin interrupciones." },
-      { icono: "⚽", titulo: "Deportes con ESPN",    texto: "Sigue tus partidos y eventos favoritos." },
-      { icono: "🌎", titulo: "Canales del mundo",    texto: "Programación nacional e internacional." }
-    ]
-  },
-
-  /* ---------- HABITACIONES ----------
-     mostrarHabitaciones: true  → se muestra la sección | false → se oculta.
-     precio: "S/ 80"            → se muestra "S/ 80 / noche"
-     precio: ""                 → se muestra "Consulta tarifas"
-     numeros: lista de números de habitación de ese tipo.
-     foto: sube la imagen a images/ (si no existe, se muestra un ícono). */
-  mostrarHabitaciones: true,
-
-  resumen: [
-    { numero: "15", texto: "Habitaciones" },
-    { numero: "20", texto: "Camas" },
-    { numero: "3",  texto: "Pisos" },
-    { numero: "5",  texto: "Tipos de habitación" }
-  ],
-
+  /* ---------- HABITACIONES (opcional) ----------
+     Cambia mostrarHabitaciones a true cuando quieras mostrarlas. */
+  mostrarHabitaciones: false,
   habitaciones: [
-    { nombre: "Matrimonial", camas: "1 cama · colchón de 2 plazas",
-      pisos: "Pisos 2, 3 y 4", numeros: ["201","203","205","301","303","305","401","403"],
-      precio: "", foto: "images/hab-matrimonial.jpg" },
-
-    { nombre: "Simple", camas: "1 cama · colchón de plaza y media",
-      pisos: "Pisos 2, 3 y 4", numeros: ["202","302","402"],
-      precio: "", foto: "images/hab-simple.jpg" },
-
-    { nombre: "Doble", camas: "2 camas · 2 colchones de plaza y media",
-      pisos: "Pisos 2 y 3", numeros: ["204","304"],
-      precio: "", foto: "images/hab-doble.jpg" },
-
-    { nombre: "Triple", camas: "3 camas · 3 colchones de plaza y media",
-      pisos: "Piso 4", numeros: ["404"],
-      precio: "", foto: "images/hab-triple.jpg" },
-
-    { nombre: "Doble plus", camas: "2 camas · 1 colchón de 2 plazas + 1 de plaza y media",
-      pisos: "Piso 4", numeros: ["405"],
-      precio: "", foto: "images/hab-doble-plus.jpg" }
+    { nombre: "Habitación Simple",   descripcion: "1 cama, baño privado, TV QLED 43\".", precio: "S/ 00", foto: "images/hab-simple.jpg" },
+    { nombre: "Habitación Doble",    descripcion: "2 camas, baño privado, TV QLED 43\".", precio: "S/ 00", foto: "images/hab-doble.jpg" },
+    { nombre: "Habitación Matrimonial", descripcion: "1 cama matrimonial, baño privado, TV QLED 43\".", precio: "S/ 00", foto: "images/hab-matrimonial.jpg" }
   ],
 
   /* ---------- GALERÍA DE FOTOS ----------
@@ -561,60 +457,22 @@ var CONFIG = {
     caja.innerHTML = ""; caja.appendChild(frag);
   });
 
-  /* 2b. TV y streaming */
-  seguro(function(){
-    var e = CONFIG.entretenimiento;
-    if(!e) return;
-    if(e.plataformas && e.plataformas.length){
-      var cp = $("lista-plataformas"); cp.innerHTML = "";
-      e.plataformas.forEach(function(p){ cp.appendChild(crear("span","plat", p)); });
-    }
-    if(e.extras && e.extras.length){
-      var ce = $("lista-extras"); ce.innerHTML = "";
-      e.extras.forEach(function(x){
-        var d = crear("div","ext");
-        d.appendChild(crear("div","icono", x.icono));
-        d.appendChild(crear("h3","", x.titulo));
-        d.appendChild(crear("p","", x.texto));
-        ce.appendChild(d);
-      });
-    }
-  });
-
   /* 3. Habitaciones */
   seguro(function(){
-    var sec = $("habitaciones");
-    if(!CONFIG.mostrarHabitaciones || !CONFIG.habitaciones || !CONFIG.habitaciones.length){
-      sec.hidden = true; $("nav-hab").hidden = true; return;
-    }
-    /* Resumen */
-    if(CONFIG.resumen && CONFIG.resumen.length){
-      var res = $("resumen-hab"); res.innerHTML = "";
-      CONFIG.resumen.forEach(function(r){
-        var d = document.createElement("div");
-        d.appendChild(crear("strong","", r.numero));
-        d.appendChild(crear("span","", r.texto));
-        res.appendChild(d);
-      });
-    }
-    /* Tarjetas por tipo */
-    var caja = $("lista-habitaciones"); caja.innerHTML = "";
+    if(!CONFIG.mostrarHabitaciones || !CONFIG.habitaciones.length) return;
+    $("habitaciones").hidden = false; $("nav-hab").hidden = false;
+    var caja = $("lista-habitaciones");
     CONFIG.habitaciones.forEach(function(h){
       var t = crear("article","hab aparecer");
       var f = crear("div","foto","🛏️");
       var img = new Image();
-      img.alt = "Habitación " + h.nombre;
-      img.loading = "lazy";
+      img.alt = h.nombre;
       img.onload = function(){ f.textContent = ""; f.appendChild(img); };   // si no carga, queda el 🛏️
       img.src = h.foto;
       var info = crear("div","info");
       info.appendChild(crear("h3","", h.nombre));
-      info.appendChild(crear("p","camas", "🛏️ " + h.camas));
-      if(h.pisos) info.appendChild(crear("p","pisos", h.pisos));
-      var nums = crear("div","nums");
-      (h.numeros || []).forEach(function(n){ nums.appendChild(crear("span","chip", n)); });
-      info.appendChild(nums);
-      info.appendChild(crear("div","precio", h.precio ? (h.precio + " / noche") : "Consulta tarifas"));
+      info.appendChild(crear("p","", h.descripcion));
+      info.appendChild(crear("div","precio", h.precio + " / noche"));
       t.appendChild(f); t.appendChild(info); caja.appendChild(t);
     });
   });
@@ -712,7 +570,7 @@ var CONFIG = {
   seguro(function(){
     var datos = {
       "@context":"https://schema.org", "@type":"Hotel",
-      "name": CONFIG.nombre, "numberOfRooms": 15, "address": { "@type":"PostalAddress", "streetAddress": CONFIG.direccion, "addressLocality":"Arequipa", "addressCountry":"PE" },
+      "name": CONFIG.nombre, "address": { "@type":"PostalAddress", "streetAddress": CONFIG.direccion, "addressLocality":"Arequipa", "addressCountry":"PE" },
       "geo": { "@type":"GeoCoordinates", "latitude": CONFIG.latitud, "longitude": CONFIG.longitud },
       "amenityFeature": CONFIG.servicios.map(function(s){ return { "@type":"LocationFeatureSpecification", "name": s.titulo, "value": true }; })
     };
